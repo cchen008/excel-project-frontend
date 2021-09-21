@@ -3,7 +3,7 @@ import axios from 'axios';
 import "./DeleteOneProfile.css";
 
 const DeleteOneProfile = ( {id} ) => {
-    const URL = `http://localhost:8080/api/v1/profiles/${id}`;
+    const URL = `https://excel-project-backend.herokuapp.com/api/v1/profiles/${id}`;
 
     const handleClick = () => {
         axios.delete(URL)

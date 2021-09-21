@@ -27,7 +27,7 @@ const EditProfile = ( {profile} ) => {
             "location": editProfile[3],
             "occupation": editProfile[4]
         };
-        axios.put(`http://localhost:8080/api/v1/profiles/${newProfile.id}`, newProfile, config)
+        axios.put(`https://excel-project-backend.herokuapp.com/api/v1/profiles/${newProfile.id}`, newProfile, config)
             .then(res => {
                 
             })

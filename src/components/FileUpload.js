@@ -12,7 +12,7 @@ const FileUpload = ({close}) => {
         "occupation": "occupation"
     }
 
-    const URL = "http://localhost:8080/api/v1/profiles/list";
+    const URL = "https://excel-project-backend.herokuapp.com/api/v1/profiles/list";
     const config = {
         headers: {
             "Content-Type": "application/json"
