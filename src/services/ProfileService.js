@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const PROFILE_REST_API_URL = "http://localhost:8080/api/v1/profiles";
+const PROFILE_REST_API_URL = "https://excel-project-backend.herokuapp.com/api/v1/profiles";
 
 class ProfileService {
 
