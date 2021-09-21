@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import FileUpload from "./FileUpload";
+import "./ProfileNavBar.css";
 
 const ProfileNavBar = () => {
     const [show, setShow] = useState(false);
@@ -11,16 +12,24 @@ const ProfileNavBar = () => {
 
     return(
         <>
-            <Navbar expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="/">Excel Imports and Exports</Navbar.Brand>
-                <Nav className="me-auto">
-                    <Nav.Link onClick={handleShow}>Upload</Nav.Link>
+            <Navbar className="nav-bar">
+                <Navbar.Brand href="/" className="nav-bar-brand">
+                    <span className="nav-bar-text">
+                        Excel Imports and Exports
+                    </span>
+                </Navbar.Brand>
+                <Nav>
+                    <Nav.Link onClick={handleShow} className="nav-link">
+                        Upload
+                    </Nav.Link>
                 </Nav>
             </Navbar>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Upload Excel Sheet</Modal.Title>
+                    <Modal.Title>
+                        Upload Excel Sheet
+                    </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <FileUpload close={handleClose} />

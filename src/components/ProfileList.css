@@ -1,0 +1,24 @@
+.profiles {
+    font-family: monospace;
+}
+
+.profile-heading {
+    font-size: 3.5em;
+    margin-top: 2%;
+}
+
+.profile-data {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.column-headings {
+    font-size: 1.25em;
+    background-color: #48a78fa6;
+    border-color: black;
+    text-align: center;
+}
+
+.last-column{
+    width: 13.5%;
+}

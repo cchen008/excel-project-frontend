@@ -1,9 +1,10 @@
 import ProfileService from '../services/ProfileService';
 import { useState, useEffect } from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Row, Col, Container } from 'react-bootstrap';
 import DeleteOneProfile from './DeleteOneProfile';
 import EditProfile from './EditProfile';
 import ExportExcelButton from './ExportExcelButton';
+import "./ProfileList.css";
 
 const ProfileList = () => {
     const [allProfiles, setAllProfiles] = useState([]);
@@ -17,24 +18,31 @@ const ProfileList = () => {
     }, [allProfiles]);
 
     return(
-        <div>
-            <h1>Profiles</h1>
-            <ExportExcelButton profiles={allProfiles} />
+        <Container className="profiles">
+            <Row>
+                <Col>
+                    <h1 className="profile-heading">Profiles</h1>
+                </Col>
+                <Col>
+                    <ExportExcelButton profiles={allProfiles}/>
+                </Col>
+            </Row>
             <Table striped bordered hover>
                 <thead>
-                    <tr>
+                    <tr className="column-headings">
                         <td>Profile Id</td>
                         <td>First Name</td>
                         <td>Last Name</td>
                         <td>Location</td>
                         <td>Occupation</td>
+                        <td className="last-column"></td>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         allProfiles.map(
                             profile =>
-                                <tr key = {profile.id}>
+                                <tr key = {profile.id} className="profile-data">
                                     <td>{profile.id}</td>
                                     <td>{profile.first_name}</td>
                                     <td>{profile.last_name}</td>
@@ -49,7 +57,7 @@ const ProfileList = () => {
                     }
                 </tbody>
             </Table>
-        </div>
+        </Container>
     )
 }
 

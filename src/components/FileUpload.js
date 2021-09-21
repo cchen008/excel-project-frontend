@@ -2,6 +2,7 @@ import { Button, Form } from 'react-bootstrap';
 import axios from 'axios';
 import React, {useState} from 'react';
 import readXlsxFile from 'read-excel-file';
+import "./FileUpload.css";
 
 const FileUpload = ({close}) => {
     const map = {
@@ -45,7 +46,7 @@ const FileUpload = ({close}) => {
                 <Form.Control type="file" onChange={changeHandler} />
             </Form.Group>
 			<div>
-				<Button onClick={handleSubmit}>Submit</Button>
+				<Button onClick={handleSubmit} id="upload-btn">Submit</Button>
 			</div>
 		</div>
 	)

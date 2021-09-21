@@ -1,5 +1,6 @@
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
+import "./DeleteOneProfile.css";
 
 const DeleteOneProfile = ( {id} ) => {
     const URL = `http://localhost:8080/api/v1/profiles/${id}`;
@@ -13,7 +14,7 @@ const DeleteOneProfile = ( {id} ) => {
 
 
     return(
-        <Button variant="danger" onClick={handleClick}>
+        <Button variant="danger" onClick={handleClick} id="delete-btn">
             Delete
         </Button>
     );

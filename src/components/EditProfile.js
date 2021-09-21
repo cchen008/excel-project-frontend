@@ -2,6 +2,7 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import "./EditProfile.css";
 
 const EditProfile = ( {profile} ) => {
     const config = {
@@ -38,7 +39,7 @@ const EditProfile = ( {profile} ) => {
 
     return(
         <>
-            <Button variant="warning" onClick={handleShow}>
+            <Button variant="warning" onClick={handleShow} id="edit-btn">
                 Edit
             </Button>
 
@@ -73,8 +74,8 @@ const EditProfile = ( {profile} ) => {
                             </Form.Label>
                         </Form.Group>
                         <Button
-                            variant="primary"
                             type="submit"
+                            id="edit-submit-btn"
                         >
                             Submit
                         </Button>

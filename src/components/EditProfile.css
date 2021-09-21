@@ -1,0 +1,14 @@
+#edit-btn {
+    margin-right: 5%;
+    font-size: .85em;
+    border-width: .1em;
+    border-color: black;
+    padding-top: .2em;
+    padding-bottom: .2em;
+}
+
+#edit-submit-btn {
+    margin-top: 2%;
+    border-color: black;
+    background-color: #5f9479;
+}

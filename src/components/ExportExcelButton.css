@@ -1,0 +1,13 @@
+#download-btn {
+    background-color: #63bea3;
+    border-color: #03271f;
+    border-radius: .35em;
+    font-size: 1.25em;
+    color: black;
+    float: right;
+    margin-top: 5%;
+}
+
+#download-btn:hover{
+    background-color: #227c5a;
+}
