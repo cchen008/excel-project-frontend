@@ -4,7 +4,7 @@ import { Modal } from "react-bootstrap";
 import FileUpload from "./FileUpload";
 import "./ProfileNavBar.css";
 
-const ProfileNavBar = () => {
+const ProfileNavBar = ({refresh}) => {
     const [show, setShow] = useState(false);
 
     const handleShow = () => setShow(true);
@@ -32,7 +32,7 @@ const ProfileNavBar = () => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <FileUpload close={handleClose} />
+                    <FileUpload close={handleClose} refresh={refresh} />
                 </Modal.Body>
             </Modal>
         </>

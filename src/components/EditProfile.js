@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import "./EditProfile.css";
 
-const EditProfile = ( {profile} ) => {
+const EditProfile = ( {profile, refresh} ) => {
     const config = {
         headers: {
             "Content-Type": "application/json"
@@ -16,7 +16,7 @@ const EditProfile = ( {profile} ) => {
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-    const handleEdit = (e) => {
+    const handleEdit = async (e) => {
         e.preventDefault();
         const editProfile = getValues(["first_name", "last_name", "location", "occupation"]);
         editProfile.unshift(profile.id);
@@ -27,13 +27,14 @@ const EditProfile = ( {profile} ) => {
             "location": editProfile[3],
             "occupation": editProfile[4]
         };
-        axios.put(`https://excel-project-backend.herokuapp.com/api/v1/profiles/${newProfile.id}`, newProfile, config)
+        await axios.put(`https://excel-project-backend.herokuapp.com/api/v1/profiles/${newProfile.id}`, newProfile, config)
             .then(res => {
                 
             })
             .catch(err => {
                 
             });
+        refresh();
         handleClose();
     }
 

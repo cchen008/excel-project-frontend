@@ -2,14 +2,15 @@ import { Button } from 'react-bootstrap';
 import axios from 'axios';
 import "./DeleteOneProfile.css";
 
-const DeleteOneProfile = ( {id} ) => {
+const DeleteOneProfile = ( {id, refresh} ) => {
     const URL = `https://excel-project-backend.herokuapp.com/api/v1/profiles/${id}`;
 
-    const handleClick = () => {
-        axios.delete(URL)
+    const handleClick = async () => {
+        await axios.delete(URL)
             .then(res => {
 
             })
+        refresh();
     }
 
 

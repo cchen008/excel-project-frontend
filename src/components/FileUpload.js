@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import readXlsxFile from 'read-excel-file';
 import "./FileUpload.css";
 
-const FileUpload = ({close}) => {
+const FileUpload = ({close, refresh}) => {
     const map = {
         "first_name": "first_name",
         "last_name": "last_name",
@@ -27,16 +27,16 @@ const FileUpload = ({close}) => {
 		//setIsFilePicked(true);
     }
 
-    const handleSubmit = () => {
-        readXlsxFile(selectedFile, { map }).then((rows) => {
+    const handleSubmit = async () => {
+        await readXlsxFile(selectedFile, { map }).then(async (rows) => {
             const profiles = rows.rows;
 
-            axios.post(URL, profiles, config)
+            await axios.post(URL, profiles, config)
                 .then(res => {
-                    // console.log(res);
-                    // console.log(res.data);
+
                 })
         })
+        refresh();
         close();
     }
 
